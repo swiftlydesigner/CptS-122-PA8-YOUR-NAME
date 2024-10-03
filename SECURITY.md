@@ -1,5 +1,8 @@
 # Security Policy
 
+> [!IMPORTANT]
+> This is a draft, please do not refer to this as an accurate report of vulnerabilities.
+
 ## Supported Versions
 
 Use this section to tell people about which versions of your project are
