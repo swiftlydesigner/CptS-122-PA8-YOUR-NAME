@@ -21,6 +21,7 @@ DbRepository::~DbRepository() {
 }
 
 /// Select all rows from a given table
+/// @Param table The table to read everything from
 pqxx::result DbRepository::selectAllFrom(const string& table) const {
     try {
         // Connect to the database
