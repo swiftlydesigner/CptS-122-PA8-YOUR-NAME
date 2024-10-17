@@ -6,7 +6,25 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		AA26C11E2CC0C952008E8E7A /* libpqxx-7.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AA26C11D2CC0C952008E8E7A /* libpqxx-7.9.dylib */; };
+		AA26C11F2CC0C952008E8E7A /* libpqxx-7.9.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = AA26C11D2CC0C952008E8E7A /* libpqxx-7.9.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		AA26C1232CC0C998008E8E7A /* libpq.5.14.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = AA26C1212CC0C998008E8E7A /* libpq.5.14.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+/* End PBXBuildFile section */
+
 /* Begin PBXCopyFilesBuildPhase section */
+		AA26C1202CC0C952008E8E7A /* Embed Libraries */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				AA26C1232CC0C998008E8E7A /* libpq.5.14.dylib in Embed Libraries */,
+				AA26C11F2CC0C952008E8E7A /* libpqxx-7.9.dylib in Embed Libraries */,
+			);
+			name = "Embed Libraries";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AA4396D72CAFB631006B8CD3 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -19,6 +37,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		AA26C11D2CC0C952008E8E7A /* libpqxx-7.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libpqxx-7.9.dylib"; path = "../../../../../../../../../../../../../../opt/homebrew/Cellar/libpqxx/7.9.2/lib/libpqxx-7.9.dylib"; sourceTree = "<group>"; };
+		AA26C1212CC0C998008E8E7A /* libpq.5.14.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libpq.5.14.dylib; path = "../../../../../../../../../../../../../../opt/homebrew/Cellar/postgresql@14/14.13_1/lib/postgresql@14/libpq.5.14.dylib"; sourceTree = "<group>"; };
 		AA4396D92CAFB631006B8CD3 /* PostgreSQL */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PostgreSQL; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -35,16 +55,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA26C1222CC0C998008E8E7A /* libpq.5.14.dylib in Frameworks */,
+				AA26C11E2CC0C952008E8E7A /* libpqxx-7.9.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AA26C11C2CC0C951008E8E7A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AA26C1212CC0C998008E8E7A /* libpq.5.14.dylib */,
+				AA26C11D2CC0C952008E8E7A /* libpqxx-7.9.dylib */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		AA4396D02CAFB631006B8CD3 = {
 			isa = PBXGroup;
 			children = (
 				AA4396DB2CAFB631006B8CD3 /* PostgreSQL */,
+				AA26C11C2CC0C951008E8E7A /* Frameworks */,
 				AA4396DA2CAFB631006B8CD3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -67,6 +99,7 @@
 				AA4396D52CAFB631006B8CD3 /* Sources */,
 				AA4396D62CAFB631006B8CD3 /* Frameworks */,
 				AA4396D72CAFB631006B8CD3 /* CopyFiles */,
+				AA26C1202CC0C952008E8E7A /* Embed Libraries */,
 			);
 			buildRules = (
 			);
@@ -244,7 +277,24 @@
 		AA4396E12CAFB631006B8CD3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
 				CODE_SIGN_STYLE = Automatic;
+				GCC_C_LANGUAGE_STANDARD = c17;
+				HEADER_SEARCH_PATHS = (
+					/opt/homebrew/opt/libpq/include,
+					/opt/homebrew/opt/libpqxx/include,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PostgreSQL/objc",
+					/opt/homebrew/Cellar/libpqxx/7.9.2/lib,
+					"/opt/homebrew/Cellar/postgresql@14/14.13_1/lib/postgresql@14",
+				);
+				OTHER_LDFLAGS = (
+					"-lpqxx",
+					"-lpq",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -252,7 +302,24 @@
 		AA4396E22CAFB631006B8CD3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
 				CODE_SIGN_STYLE = Automatic;
+				GCC_C_LANGUAGE_STANDARD = c17;
+				HEADER_SEARCH_PATHS = (
+					/opt/homebrew/opt/libpq/include,
+					/opt/homebrew/opt/libpqxx/include,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PostgreSQL/objc",
+					/opt/homebrew/Cellar/libpqxx/7.9.2/lib,
+					"/opt/homebrew/Cellar/postgresql@14/14.13_1/lib/postgresql@14",
+				);
+				OTHER_LDFLAGS = (
+					"-lpqxx",
+					"-lpq",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
