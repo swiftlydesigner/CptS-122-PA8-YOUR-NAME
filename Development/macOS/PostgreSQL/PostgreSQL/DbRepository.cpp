@@ -32,7 +32,37 @@ DbRepository::~DbRepository() {
     
 }
 
-/// Connect to the database
+/// Select all rows from a given table
 pqxx::result DbRepository::selectAllFrom(const string& table) const {
+    try {
+        // Connect to the database
+        pqxx::connection conn(url);
+        
+        // Check if the connection is open
+#ifdef DEBUG
+        if (conn.is_open()) {
+            std::cout << "Opened database successfully: " << conn.dbname() << std::endl;
+        } else {
+            std::cout << "Can't open database" << std::endl;
+            return pqxx::result();
+        }
+#else
+        if (!conn.is_open()) {
+            return pqxx::result();
+        }
+#endif
+        
+        // Create a non-transactional object
+        pqxx::nontransaction nonTrans(conn);
+        
+        // Execute a SQL query
+        pqxx::result results(nonTrans.exec("SELECT * FROM " + table + ";"));
+        
+        // Print the result
+        return results;
+        
+    } catch (const std::exception &e) {
+        std::cerr << e.what() << std::endl;
+    }
     return pqxx::result();
 }

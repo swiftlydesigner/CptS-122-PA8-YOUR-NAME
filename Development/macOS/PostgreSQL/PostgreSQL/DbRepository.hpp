@@ -37,7 +37,7 @@ public:
     /// Cleanup before destroying obejct
     ~DbRepository();
     
-    
+    /// Select all rows from a given table
     pqxx::result selectAllFrom(const string& table) const;
 };
 
