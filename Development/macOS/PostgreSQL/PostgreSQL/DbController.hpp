@@ -18,6 +18,12 @@ class DbController {
     /// Disable = operator
     void operator=(const DbController&rhs) = delete;
     
+    string url;
+    
+    string databaseName;
+    
+    bool isConnectedToDb = false;
+    
 public:
     /// Construct a controller with a given filled out URL
     /// @Param fullURL The complete server URL for connecting to
@@ -30,6 +36,21 @@ public:
     /// @Param serverAddr The address of the server to connect to.
     /// @Param db The name of the database to connect to.
     DbController(const string& username, const string& serverId, const string& password, const string& serverAddr, const string& db);
+    
+    /// Cleanup before destroying obejct
+    ~DbController();
+    
+    /// Connect to the database
+    bool connect();
+    
+    /// Check if the controller is connected to the database
+    bool isConnected() const;
+    
+    /// Return the name of the database we are connected to
+    const string& getDatabaseName() const;
+    
+    /// Close the current database connection
+    void close();
 };
 
 #endif /* DbController_hpp */
