@@ -9,6 +9,7 @@
 #define DbRepository_hpp
 
 #include <string>
+#include <pqxx/pqxx>
 
 using std::string;
 
@@ -19,10 +20,6 @@ class DbRepository {
     void operator=(const DbRepository&rhs) = delete;
     
     string url;
-    
-    string databaseName;
-    
-    bool isConnectedToDb = false;
     
 public:
     /// Construct a controller with a given filled out URL
@@ -40,17 +37,8 @@ public:
     /// Cleanup before destroying obejct
     ~DbRepository();
     
-    /// Connect to the database
-    bool connect();
     
-    /// Check if the controller is connected to the database
-    bool isConnected() const;
-    
-    /// Return the name of the database we are connected to
-    const string& getDatabaseName() const;
-    
-    /// Close the current database connection
-    void close();
+    pqxx::result selectAllFrom(const string& table) const;
 };
 
 #endif /* DbRepository_hpp */

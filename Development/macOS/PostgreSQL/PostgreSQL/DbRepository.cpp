@@ -6,7 +6,6 @@
 //
 
 #include <iostream>
-#include <pqxx/pqxx>
 
 #include "DbRepository.hpp"
 
@@ -34,21 +33,6 @@ DbRepository::~DbRepository() {
 }
 
 /// Connect to the database
-bool DbRepository::connect() {
-    return false;
-}
-
-/// Check if the controller is connected to the database
-bool DbRepository::isConnected() const {
-    return false;
-}
-
-/// Return the name of the database we are connected to
-const string& DbRepository::getDatabaseName() const {
-    return nullptr;
-}
-
-/// Close the current database connection
-void close() {
-    
+pqxx::result DbRepository::selectAllFrom(const string& table) const {
+    return pqxx::result();
 }
