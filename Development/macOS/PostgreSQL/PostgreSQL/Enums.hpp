@@ -37,4 +37,16 @@ typedef enum : int {
     SALT // uuid
 } GOOGLE_LOGIN;
 
+typedef enum : int {
+    kUS,
+    kGB,
+    kIE,
+    kDE,
+    kCA,
+    kBR,
+    kFR,
+    kAU,
+    kUNSPECIFIED
+} Country;
+
 #endif /* Enums_h */
