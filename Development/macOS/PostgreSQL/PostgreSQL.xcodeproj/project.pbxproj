@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		AA26C11E2CC0C952008E8E7A /* libpqxx-7.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AA26C11D2CC0C952008E8E7A /* libpqxx-7.9.dylib */; };
 		AA26C11F2CC0C952008E8E7A /* libpqxx-7.9.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = AA26C11D2CC0C952008E8E7A /* libpqxx-7.9.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		AA26C1222CC0C998008E8E7A /* libpq.5.14.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AA26C1212CC0C998008E8E7A /* libpq.5.14.dylib */; };
 		AA26C1232CC0C998008E8E7A /* libpq.5.14.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = AA26C1212CC0C998008E8E7A /* libpq.5.14.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
 

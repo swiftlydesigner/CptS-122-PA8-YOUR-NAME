@@ -5,6 +5,9 @@
 //  Created by main on 10/3/24.
 //
 
+#include <iostream>
+#include <pqxx/pqxx>
+
 #include "DbRepository.hpp"
 
 /// Construct a controller with a given filled out URL
