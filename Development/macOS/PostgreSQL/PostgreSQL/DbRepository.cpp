@@ -10,7 +10,7 @@
 /// Construct a controller with a given filled out URL
 /// @Param fullURL The complete server URL for connecting to
 DbRepository::DbRepository(const string& fullURL) {
-    
+    this->url = fullURL;
 }
 
 /// Construct a controller with the given information. The URL will be built in the format: `postgresql://[user].[serverId]:[password]@[serverAddr]:[port]/[db-name]`
@@ -20,7 +20,9 @@ DbRepository::DbRepository(const string& fullURL) {
 /// @Param serverAddr The address of the server to connect to.
 /// @Param db The name of the database to connect to.
 DbRepository::DbRepository(const string& username, const string& serverId, const string& password, const string& serverAddr, const string& db) {
-    
+    this->url =
+        "postgresql://" + username + "." + serverId +
+            ":" + password + "@" + serverAddr + ":5432/" + db;
 }
 
 /// Cleanup before destroying obejct
