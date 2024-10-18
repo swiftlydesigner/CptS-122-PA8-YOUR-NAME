@@ -20,7 +20,7 @@ ReviewApp::~ReviewApp() {
 
 /// Run the application here.
 void ReviewApp::runApplication() {
-    
+    /// TODO: Put your application logic here!
 }
 
 /// Login to an account. Set the username and countries.
