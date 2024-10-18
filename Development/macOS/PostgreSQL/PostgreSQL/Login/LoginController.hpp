@@ -9,6 +9,7 @@
 #define LoginController_hpp
 
 #include "DbService.hpp"
+#include "../Types/Common.hpp"
 
 using std::pair;
 
@@ -20,6 +21,8 @@ class LoginController final {
     string _username;
     string _password;
     
+    int loginAttempts = 0;
+    
     /// Get the username and store into _username
     void getUsername();
     
@@ -29,11 +32,12 @@ class LoginController final {
 public:
     LoginController();
     
+    /// Delete the copy constructor and = operator.
     LoginController(const LoginController& copy) = delete;
     LoginController operator=(const LoginController& rhs) = delete;
     
     /// Prompt the user for username and password
-    void gatherLoginCreds() const;
+    void gatherLoginCreds();
     
     /// Attempt login with the gatheredCredentials
     /// @Returns True if the login was ok, false otherwise
