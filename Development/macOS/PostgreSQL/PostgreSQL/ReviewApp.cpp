@@ -24,9 +24,9 @@ bool ReviewApp::login() {
     return loginController.attemptLogin();
 }
 
-/// Called after a successful login.
+/// Retrieve the user's username and countries. Then destroy the loginController.
 /// @Warning Failure to successfully login will result in a crash!
-void ReviewApp::getLoginInfo() {
+void ReviewApp::getUserInformation() {
     
 }
 

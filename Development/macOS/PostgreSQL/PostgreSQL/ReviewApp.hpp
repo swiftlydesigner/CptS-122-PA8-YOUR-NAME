@@ -13,12 +13,19 @@
 
 class ReviewApp final {
     LoginController loginController;
+    /// MARK: - Do not edit the members below
     
     vector<Country> countries;
     
+    /// The username of the current user.
     string username;
     
+    /// Holds all the reviews
     vector<GoogleReviewEntity> reviews;
+    
+    /// MARK: - Begin adding members below
+    
+    /// MARK: - Do not edit the functions below
     
     /// Login to an account. Set the username and countries.
     /// @Returns Success of login.
@@ -26,15 +33,18 @@ class ReviewApp final {
     
     /// Called after a successful login.
     /// @Warning Failure to successfully login will result in a crash!
-    void getLoginInfo();
+    void getUserInformation();
     
     /// Fetch all data from the database.
     void fetchDataFromDb();
     
-    /// Shows the menu options
+    /// Shows the menu options.
     void showMenuOptions() const;
     
+    /// MARK: - Begin adding functions here
+    
 public:
+    /// MARK: - Do not edit the functions below
     /// Default constructor
     ReviewApp();
     
