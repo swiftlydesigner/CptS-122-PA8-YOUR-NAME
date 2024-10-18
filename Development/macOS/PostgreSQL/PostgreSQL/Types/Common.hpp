@@ -2,7 +2,7 @@
 //  Common.hpp
 //  PostgreSQL
 //
-//  Created by main on 10/17/24.
+//  Created by Kyle Parker on 10/17/24.
 //
 
 #ifndef Common_hpp

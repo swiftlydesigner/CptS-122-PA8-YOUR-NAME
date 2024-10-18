@@ -2,7 +2,7 @@
 //  Common.cpp
 //  PostgreSQL
 //
-//  Created by main on 10/17/24.
+//  Created by Kyle Parker on 10/17/24.
 //
 
 #include "Common.hpp"
