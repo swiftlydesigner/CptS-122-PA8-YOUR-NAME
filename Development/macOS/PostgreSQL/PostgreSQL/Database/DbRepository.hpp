@@ -17,7 +17,7 @@ class DbRepository {
     /// Disable copy constructor
     DbRepository(DbRepository& copy) = delete;
     /// Disable = operator
-    void operator=(const DbRepository&rhs) = delete;
+    DbRepository operator=(const DbRepository&rhs) = delete;
     
     string url;
     
