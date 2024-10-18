@@ -12,9 +12,12 @@
 #include "Login/LoginController.hpp"
 
 class ReviewApp final {
-    LoginController loginController;
     /// MARK: - Do not edit the members below
     
+    /// The controller which handles user login and authentication.
+    LoginController * loginController;
+    
+    /// The countries of interest.
     vector<Country> countries;
     
     /// The username of the current user.
@@ -47,6 +50,9 @@ public:
     /// MARK: - Do not edit the functions below
     /// Default constructor
     ReviewApp();
+    
+    /// Destructor
+    ~ReviewApp();
     
     /// Delete the copy constructor
     ReviewApp(ReviewApp&copy) = delete;
