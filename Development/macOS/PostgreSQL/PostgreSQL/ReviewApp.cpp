@@ -47,5 +47,9 @@ void ReviewApp::fetchDataFromDb() {
 
 /// Shows the menu options
 void ReviewApp::showMenuOptions() const {
-    
+    int lineNumber = 0;
+    for (const string& option : this->_options) {
+        cout << lineNumber << ") " << option << endl;
+        ++lineNumber;
+    }
 }

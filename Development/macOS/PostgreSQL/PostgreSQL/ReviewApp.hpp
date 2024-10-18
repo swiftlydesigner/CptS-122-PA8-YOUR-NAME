@@ -28,6 +28,13 @@ class ReviewApp final {
     
     /// MARK: - Begin adding members below
     
+    /// You must use the following style to define your options:
+    vector<string> _options = {
+        "Example 1",
+        "Example 2"
+        /// TODO: Type literal strings here for each option
+    };
+    
     /// MARK: - Do not edit the functions below
     
     /// Login to an account. Set the username and countries.
