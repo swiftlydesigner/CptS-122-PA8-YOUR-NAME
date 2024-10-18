@@ -51,6 +51,8 @@ class ReviewApp final {
     /// Shows the menu options.
     void showMenuOptions() const;
     
+    void getMenuOption() const;
+    
     /// MARK: - Begin adding functions here
     
 public:

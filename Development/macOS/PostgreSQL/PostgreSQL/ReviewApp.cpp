@@ -53,3 +53,7 @@ void ReviewApp::showMenuOptions() const {
         ++lineNumber;
     }
 }
+
+void ReviewApp::getMenuOption() const {
+    
+}
