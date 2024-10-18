@@ -30,7 +30,7 @@ class GoogleReviewEntity final {
     string _reviewerUrl;
     bool _localGuide;
     int _reviewRating;
-    string _review;
+    optional <string> _review;
     string _reviewDate;
     int _numberOfLikes;
     optional <string> _responseOfOwner;
