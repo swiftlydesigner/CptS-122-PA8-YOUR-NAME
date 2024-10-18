@@ -33,7 +33,11 @@ bool ReviewApp::login() {
 /// Retrieve the user's username and countries. Then destroy the loginController.
 /// @Warning Failure to successfully login will result in a crash!
 void ReviewApp::getUserInformation() {
+    this->_username = _loginController->username();
+    this->_countries = _loginController->countries();
     
+    delete _loginController;
+    _loginController = nullptr;
 }
 
 /// Fetch all data from the database.
