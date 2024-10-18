@@ -47,13 +47,37 @@ void ReviewApp::fetchDataFromDb() {
 
 /// Shows the menu options
 void ReviewApp::showMenuOptions() const {
-    int lineNumber = 0;
+    clearScreen();
+    int lineNumber = 1;
+    
     for (const string& option : this->_options) {
         cout << lineNumber << ") " << option << endl;
         ++lineNumber;
     }
 }
 
-void ReviewApp::getMenuOption() const {
+int ReviewApp::getMenuOption() const {
+    bool valid = true;
+    int option = 0;
+    string input;
     
+    do {
+        if (!valid) {
+            cout << "Invlaid selection: Input must be an integer and within the range 1 - " << (this->_options.size() - 1) << "!" << endl;
+        }
+        
+        cout << "Selection % ";
+        std::getline(std::cin, input);
+        
+        try {
+            option = std::stoi(input);
+        } catch (std::exception exc) {
+            valid = false;
+        }
+        
+        /// Ensure the option is between 1 and size-1, inclusive.
+        valid = option > 0 && option < this->_options.size();
+    } while (!valid);
+    
+    return option - 1;
 }
