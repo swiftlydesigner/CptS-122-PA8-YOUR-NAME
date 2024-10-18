@@ -15,16 +15,16 @@ class ReviewApp final {
     /// MARK: - Do not edit the members below
     
     /// The controller which handles user login and authentication.
-    LoginController * loginController;
+    LoginController * _loginController;
     
     /// The countries of interest.
-    vector<Country> countries;
+    vector<Country> _countries;
     
     /// The username of the current user.
-    string username;
+    string _username;
     
     /// Holds all the reviews
-    vector<GoogleReviewEntity> reviews;
+    vector<GoogleReviewEntity> _reviews;
     
     /// MARK: - Begin adding members below
     

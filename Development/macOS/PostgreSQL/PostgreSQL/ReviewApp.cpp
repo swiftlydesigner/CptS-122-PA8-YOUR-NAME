@@ -9,12 +9,12 @@
 
 /// Default constructor
 ReviewApp::ReviewApp() {
-    loginController = new LoginController;
+    _loginController = new LoginController;
 }
 
 ReviewApp::~ReviewApp() {
-    if (loginController) {
-        delete loginController;
+    if (_loginController) {
+        delete _loginController;
     }
 }
 
@@ -26,8 +26,8 @@ void ReviewApp::runApplication() {
 /// Login to an account. Set the username and countries.
 /// @Returns Success of login.
 bool ReviewApp::login() {
-    loginController->gatherLoginCreds();
-    return loginController->attemptLogin();
+    _loginController->gatherLoginCreds();
+    return _loginController->attemptLogin();
 }
 
 /// Retrieve the user's username and countries. Then destroy the loginController.
