@@ -20,7 +20,14 @@ ReviewApp::~ReviewApp() {
 
 /// Run the application here.
 void ReviewApp::runApplication() {
-    /// TODO: Put your application logic here!
+    int selection = 0;
+    bool shouldRun = true;
+    
+    while (shouldRun) {
+        showMenuOptions();
+        selection = getMenuOption();
+        handleMenuOption(selection);
+    }
 }
 
 /// Login to an account. Set the username and countries.
@@ -56,6 +63,7 @@ void ReviewApp::showMenuOptions() const {
     }
 }
 
+
 int ReviewApp::getMenuOption() const {
     bool valid = true;
     int option = 0;
@@ -80,4 +88,12 @@ int ReviewApp::getMenuOption() const {
     } while (!valid);
     
     return option - 1;
+}
+
+/// TODO: Implment this
+void ReviewApp::handleMenuOption(const int selection) const {
+    /// TODO: Put your application logic here!
+    /// Note: If you need the string to describe the action, do
+    /// so by accessing this->_options.at(selection).
+    /// Note: selection is already the index, do not adjust it!
 }
