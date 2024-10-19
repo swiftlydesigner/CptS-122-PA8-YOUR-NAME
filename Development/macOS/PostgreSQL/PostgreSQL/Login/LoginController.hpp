@@ -10,7 +10,7 @@
 #ifndef LoginController_hpp
 #define LoginController_hpp
 
-#include "DbService.hpp"
+#include "../Database/DbService.hpp"
 #include "../Types/Common.hpp"
 
 using std::pair;

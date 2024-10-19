@@ -12,7 +12,7 @@
 #ifndef ReviewApp_hpp
 #define ReviewApp_hpp
 
-#include "DbService.hpp"
+#include "Database/DbService.hpp"
 #include "Login/LoginController.hpp"
 
 class ReviewApp final {

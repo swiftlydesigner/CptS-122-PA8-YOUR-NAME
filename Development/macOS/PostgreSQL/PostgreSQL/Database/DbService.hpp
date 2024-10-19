@@ -13,7 +13,7 @@
 #include <vector>
 
 #include "DbRepository.hpp"
-#include "GoogleReviewEntity.hpp"
+#include "../Entities/GoogleReviewEntity.hpp"
 
 using std::vector;
 
