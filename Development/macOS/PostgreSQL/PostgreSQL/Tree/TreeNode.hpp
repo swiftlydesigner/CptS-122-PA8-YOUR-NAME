@@ -13,6 +13,9 @@
 class Node final {
     NodeData * data;
     
+    Node * left;
+    Node * right;
+    
 public:
     
 };
