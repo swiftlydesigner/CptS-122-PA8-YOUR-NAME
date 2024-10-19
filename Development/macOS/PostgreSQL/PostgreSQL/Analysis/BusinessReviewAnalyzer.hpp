@@ -5,6 +5,8 @@
 //  Created by main on 10/18/24.
 //
 
+/// TODO: Layout BusinessReviewAnalyzer!
+
 #ifndef BusinessReviewAnalyzer_hpp
 #define BusinessReviewAnalyzer_hpp
 
@@ -12,7 +14,7 @@
 
 using std::vector;
 
-class BusinessReviewAnalyzer {
+class BusinessReviewAnalyzer final {
     vector<GoogleReviewEntity> _entites;
     
 public:

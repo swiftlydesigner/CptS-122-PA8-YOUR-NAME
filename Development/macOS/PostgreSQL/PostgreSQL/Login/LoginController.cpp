@@ -5,6 +5,8 @@
 //  Created by Kyle Parker on 10/17/24.
 //
 
+/// TODO: Implement `bool LoginController::attemptLogin()`!
+
 #include "LoginController.hpp"
 
 /// MARK: - Private Methods

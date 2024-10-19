@@ -5,6 +5,10 @@
 //  Created by Kyle Parker on 10/17/24.
 //
 
+/// Attention students: Please do not modify the indicated sections.
+
+/// TODO: Layout ReviewApp
+
 #ifndef ReviewApp_hpp
 #define ReviewApp_hpp
 

@@ -5,11 +5,11 @@
 //  Created by Kyle Parker on 10/3/24.
 //
 
+/// Attention students: Please do not modify this file.
+
 #include "ReviewApp.hpp"
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
     
     ReviewApp* app = new ReviewApp;
     

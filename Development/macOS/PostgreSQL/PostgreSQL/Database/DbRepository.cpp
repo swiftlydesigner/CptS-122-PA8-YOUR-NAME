@@ -5,6 +5,8 @@
 //  Created by Kyle Parker on 10/3/24.
 //
 
+/// Attention students: Nothing to do here!
+
 #include <iostream>
 
 #include "DbRepository.hpp"

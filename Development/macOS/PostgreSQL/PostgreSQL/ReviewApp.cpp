@@ -5,6 +5,8 @@
 //  Created by Kyle Parker on 10/17/24.
 //
 
+/// TODO: Complete TODOs below
+
 #include "ReviewApp.hpp"
 
 /// Default constructor
@@ -93,6 +95,15 @@ int ReviewApp::getMenuOption() const {
 /// TODO: Implment this
 void ReviewApp::handleMenuOption(const int selection) const {
     /// TODO: Put your application logic here!
+    ///
+    /// **Important Note:** You should call helper functions for each option.
+    /// Within each helper function (as needed), please utilize the BusinessReviewAnalyzer
+    /// class! You may decide to create a local variable in each function, or simply
+    /// add a member to this class (ReviewApp) of type BusinessReviewAnalyzer.
+    /// When you design this, please note you may not have the required info to
+    /// create an instance of BusinessReviewAnalyzer when ReviewApp's constructor
+    /// is called.
+    ///
     /// Note: If you need the string to describe the action, do
     /// so by accessing this->_options.at(selection).
     /// Note: selection is already the index, do not adjust it!

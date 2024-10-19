@@ -5,6 +5,8 @@
 //  Created by Kyle Parker on 10/17/24.
 //
 
+/// Attention students: Nothing to do here!
+
 #ifndef DbService_hpp
 #define DbService_hpp
 

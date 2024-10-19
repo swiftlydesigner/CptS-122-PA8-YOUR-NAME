@@ -5,6 +5,8 @@
 //  Created by Kyle Parker on 10/17/24.
 //
 
+/// Attention students: Nothing to do here!
+
 #include "DbService.hpp"
 
 /// Create a service item to access a database

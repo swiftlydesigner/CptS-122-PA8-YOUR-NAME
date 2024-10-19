@@ -5,6 +5,8 @@
 //  Created by Kyle Parker on 10/18/24.
 //
 
+/// Attention students: Nothing to do here!
+
 #include "NodeData.hpp"
 #include "../Entities/GoogleReviewEntity.hpp"
 

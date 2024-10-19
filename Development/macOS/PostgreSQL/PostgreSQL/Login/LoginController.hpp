@@ -5,6 +5,8 @@
 //  Created by Kyle Parker on 10/17/24.
 //
 
+/// Attention Students: There is nothing to change here. Please look in the cpp file.
+
 #ifndef LoginController_hpp
 #define LoginController_hpp
 

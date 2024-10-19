@@ -5,6 +5,8 @@
 //  Created by Kyle Parker on 10/17/24.
 //
 
+/// Attention students: Please do not modify this file.
+
 #ifndef Common_hpp
 #define Common_hpp
 
