@@ -5,7 +5,7 @@
 //  Created by Kyle Parker on 10/18/24.
 //
 
-/// TODO: Layout BusinessReviewAnalyzer!
+/// TODO: Design BusinessReviewAnalyzer!
 
 #ifndef BusinessReviewAnalyzer_hpp
 #define BusinessReviewAnalyzer_hpp
