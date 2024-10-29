@@ -34,6 +34,9 @@ class LoginController final {
     /// Get the password from the user and store into _password
     void getPasswordFromUser();
     
+    void setFieldFromQueryResult(optional<string>& dest,
+                                 const string& field,
+                                 const QueryResultVector& results) const;
     
 public:
     LoginController();

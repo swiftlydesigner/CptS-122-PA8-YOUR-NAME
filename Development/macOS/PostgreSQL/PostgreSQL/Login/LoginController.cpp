@@ -20,6 +20,12 @@ void LoginController::getPasswordFromUser() {
     std::getline(std::cin, this->_password);
 }
 
+void LoginController::setFieldFromQueryResult(optional<string>& dest,
+                                              const string& field,
+                                              const QueryResultVector& results) const {
+    
+}
+
 /// MARK: - Public Methods
 LoginController::LoginController() : _service("postgresql://introuser.soppzqrbchxgxpaqngld:122pass@aws-0-us-west-1.pooler.supabase.com:6543/postgres") {
     
@@ -44,10 +50,10 @@ void LoginController::gatherLoginCreds() {
     }
     
     cout << "username % ";
-    getUsername();
+    getUsernameFromUser();
     hideInput();
     cout << "password % ";
-    getPassword();
+    getPasswordFromUser();
     showInput();
     
     ++loginAttempts;
