@@ -57,3 +57,41 @@ pqxx::result DbRepository::selectAllFrom(const string& table) const {
     }
     return pqxx::result();
 }
+
+/// Select all fields from a given table
+/// @Param fields The fields to select in
+/// @Param table The table to read from
+/// @Param where Conditionals
+pqxx::result DbRepository::selectWhere(const string& fields, const string& table, const string& where) const {
+    try {
+        // Connect to the database
+        pqxx::connection conn(url);
+        
+        // Check if the connection is open
+#ifdef DEBUG
+        if (conn.is_open()) {
+            std::cout << "Opened database successfully: " << conn.dbname() << std::endl;
+        } else {
+            std::cout << "Can't open database" << std::endl;
+            return pqxx::result();
+        }
+#else
+        if (!conn.is_open()) {
+            return pqxx::result();
+        }
+#endif
+        
+        // Create a non-transactional object
+        pqxx::nontransaction nonTrans(conn);
+        
+        // Execute a SQL query
+        pqxx::result results(nonTrans.exec("SELECT (" + fields + ") FROM " + table + " WHERE (" + where + ");"));
+        
+        // Print the result
+        return results;
+        
+    } catch (const std::exception &e) {
+        std::cerr << e.what() << std::endl;
+    }
+    return pqxx::result();
+}

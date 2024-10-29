@@ -33,6 +33,9 @@ public:
     
     /// Select all rows from a given table
     pqxx::result selectAllFrom(const string& table) const;
+    
+    /// Select a fields form a row where the conditions are met from the given table
+    pqxx::result selectWhere(const string& fields, const string& table, const string& where) const;
 };
 
 #endif /* DbRepository_hpp */
