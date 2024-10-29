@@ -25,3 +25,9 @@ vector<GoogleReviewEntity> DbService::getAllReviews() {
 vector<GoogleReviewEntity> DbService::getReviewsWithCountry(Country country) {
     return vector<GoogleReviewEntity>();
 }
+
+/// Get the login info for the specified username.
+/// @Param username The username to login with
+map<std::string, std::string> DbService::getLoginDataForUser(const std::string& username) {
+    return {};
+}
