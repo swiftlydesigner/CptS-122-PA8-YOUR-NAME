@@ -11,13 +11,13 @@
 #define DbService_hpp
 
 #include <vector>
-#include <map>
 
 #include "DbRepository.hpp"
 #include "../Entities/GoogleReviewEntity.hpp"
 
 using std::vector;
-using std::map;
+using std::pair;
+using std::make_pair;
 
 class DbService final {
     DbRepository _repo;
@@ -34,7 +34,7 @@ public:
     /// @Param country The country to filter by
     vector<GoogleReviewEntity> getReviewsWithCountry(Country country);
     
-    map<std::string, std::string> getLoginDataForUser(const std::string& username);
+    vector< pair<string, optional<string> > > getLoginDataForUser(const std::string& username);
 };
 
 #endif /* DbService_hpp */

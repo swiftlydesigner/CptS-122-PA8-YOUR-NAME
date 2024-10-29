@@ -28,6 +28,17 @@ vector<GoogleReviewEntity> DbService::getReviewsWithCountry(Country country) {
 
 /// Get the login info for the specified username.
 /// @Param username The username to login with
-map<std::string, std::string> DbService::getLoginDataForUser(const std::string& username) {
-    return {};
+vector< pair<string, optional<string> > > DbService::getLoginDataForUser(const std::string& username) {
+    vector< pair<string, optional<string> > > data = {};
+    
+    pqxx::result result = this->_repo.selectWhere("password, salt, countries", "google_login", "username = '" + username + "'");
+    
+    const pqxx::row& row = result.front();
+    
+    data.push_back(make_pair("pw", row["password"].as< optional<string> >()));
+    data.push_back(make_pair("country", row["counties"].as< optional<string> >()));
+    data.push_back(make_pair("usr", username));
+    data.push_back(make_pair("salt", row["salt"].as< optional<string> >()));
+    
+    return data;
 }
