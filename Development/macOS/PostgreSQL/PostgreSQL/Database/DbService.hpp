@@ -19,6 +19,8 @@ using std::vector;
 using std::pair;
 using std::make_pair;
 
+using QueryResultVector = vector< pair<string, optional<string> > >;
+
 class DbService final {
     DbRepository _repo;
     
@@ -34,7 +36,9 @@ public:
     /// @Param country The country to filter by
     vector<GoogleReviewEntity> getReviewsWithCountry(Country country);
     
-    vector< pair<string, optional<string> > > getLoginDataForUser(const std::string& username);
+    /// Get the login data in the form of a vector
+    /// @Param username The username to login under
+    QueryResultVector getLoginDataForUser(const std::string& username);
 };
 
 #endif /* DbService_hpp */
