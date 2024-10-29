@@ -23,7 +23,11 @@ void LoginController::getPasswordFromUser() {
 void LoginController::setFieldFromQueryResult(optional<string>& dest,
                                               const string& field,
                                               const QueryResultVector& results) const {
-    
+    for (const auto &curEle : results) {
+        if (curEle.first == field) {
+            dest = curEle.second;
+        }
+    }
 }
 
 /// MARK: - Public Methods
