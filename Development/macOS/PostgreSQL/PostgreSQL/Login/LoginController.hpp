@@ -21,18 +21,19 @@ class LoginController final {
     
     vector<Country> _countries;
     
+    static optional<User> _currentUser;
+    
     string _username;
     string _password;
     
     int loginAttempts = 0;
     
     /// Get the username and store into _username
-    void getUsername();
+    void getUsernameFromUser();
     
     /// Get the password from the user and store into _password
-    void getPassword();
+    void getPasswordFromUser();
     
-    static optional<User> _currentUser;
     
 public:
     LoginController();

@@ -11,12 +11,12 @@
 
 /// MARK: - Private Methods
 /// Get the username from the user and store into _username
-void LoginController::getUsername() {
+void LoginController::getUsernameFromUser() {
     std::getline(std::cin, this->_username);
 }
 
 /// Get the password from the user and store into _password
-void LoginController::getPassword() {
+void LoginController::getPasswordFromUser() {
     std::getline(std::cin, this->_password);
 }
 
