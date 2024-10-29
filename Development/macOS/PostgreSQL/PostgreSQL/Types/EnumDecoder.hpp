@@ -10,6 +10,8 @@
 #ifndef EnumDecoder_h
 #define EnumDecoder_h
 
+#include <map>
+
 #include "Enums.hpp"
 
 /// Taken from GPT 4.o-mini
