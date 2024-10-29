@@ -12,6 +12,7 @@
 
 #include "../Database/DbService.hpp"
 #include "../Types/Common.hpp"
+#include "../Entities/User.hpp"
 
 using std::pair;
 
@@ -30,6 +31,8 @@ class LoginController final {
     
     /// Get the password from the user and store into _password
     void getPassword();
+    
+    static optional<User> _currentUser;
     
 public:
     LoginController();
