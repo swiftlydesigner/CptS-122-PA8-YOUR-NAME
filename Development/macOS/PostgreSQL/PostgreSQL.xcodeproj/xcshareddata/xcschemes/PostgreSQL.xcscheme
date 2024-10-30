@@ -56,6 +56,13 @@
             ReferencedContainer = "container:PostgreSQL.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <EnvironmentVariables>
+         <EnvironmentVariable
+            key = "SECURE_KEY"
+            value = "0fb3dc88e6887aedb94e41573d31dbfff201ad76c7a111cb2535dac1bd5e9173f48ec87eddb10eadfa38be62d3a7e39edee19b53f15a5cce651aabaac7e4cf8e"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+      </EnvironmentVariables>
       <AdditionalOptions>
          <AdditionalOption
             key = "NSZombieEnabled"

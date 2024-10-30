@@ -30,6 +30,25 @@ void LoginController::setFieldFromQueryResult(optional<string>& dest,
     }
 }
 
+string LoginController::hashPassword(const string& plainText, const string& salt) {
+    const char * key = std::getenv("SECURE_KEY");
+    char plain[512];
+    char saltStr[512];
+    
+    strncpy(plain, plainText.c_str(), 512);
+    strncpy(saltStr, salt.c_str(), 512);
+    
+    const size_t resultSize = strlen(key);
+    
+    char result[resultSize];
+    
+    for (int i = 0; i < resultSize; ++i) {
+        result[i] = key[i] ^ (plainText[i] ^ saltStr[i]);
+    }
+    
+    return string(result);
+}
+
 /// MARK: - Public Methods
 LoginController::LoginController() : _service("postgresql://introuser.soppzqrbchxgxpaqngld:122pass@aws-0-us-west-1.pooler.supabase.com:6543/postgres") {
     
@@ -66,10 +85,24 @@ void LoginController::gatherLoginCreds() {
 /// Attempt login with the gatheredCredentials
 /// @Returns True if the login was ok, false otherwise
 bool LoginController::attemptLogin() {
-    /// TODO: (Me) Select the row where the username matches
-    /// TODO: (Me) Hash the password with salt
-    /// TODO: (Student) Compare if the hashed_password == password. Return this value
-    return false;
+    bool success = true;
+    
+    QueryResultVector result = this->_service.getLoginDataForUser(username());
+    
+    string hashedPassword;
+    optional<string> password;
+    optional<string> salt;
+    
+    setFieldFromQueryResult(password, "password", result);
+    setFieldFromQueryResult(password, "salt", result);
+    
+    if (!password.has_value() || !salt.has_value()) {
+        success = false;
+    }
+    
+    hashedPassword = this->hashPassword(password.value(), salt.value());
+    
+    return hashedPassword == password;
 }
 
 /// Get the username
