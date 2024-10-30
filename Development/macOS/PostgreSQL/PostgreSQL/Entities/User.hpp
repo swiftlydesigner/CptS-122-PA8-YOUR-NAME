@@ -26,6 +26,10 @@ public:
     /// Initalize the user with a username and string version of country.
     User(const std::string& username, const std::string& country);
     
+    User(const User& copy);
+    
+    User operator=(const User& rhs);
+    
     /// Get the username of the current user
     const std::string& username();
     

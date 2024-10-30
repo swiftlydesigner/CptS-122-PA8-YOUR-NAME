@@ -27,7 +27,17 @@ User::User(const std::string& username, const Country country) :
 
 User::User(const std::string& username, const std::string& country) :
     _username(username),
-    _countries(_stringToCountries(country)) {}
+    _countries(_stringToCountries(country))
+{}
+
+User::User(const User& copy) :
+    _username(copy._username),
+    _countries(copy._countries)
+{}
+
+User User::operator=(const User& rhs) {
+    return User(rhs);
+}
 
 const std::string& User::username() {
     return _username;

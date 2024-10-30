@@ -5,9 +5,12 @@
 //  Created by Kyle Parker on 10/17/24.
 //
 
-/// TODO: Implement `bool LoginController::attemptLogin()`!
+/// Attention Students: Nothing to do here!
 
 #include "LoginController.hpp"
+
+/// MARK: - Initalize static members
+optional<User> LoginController::_currentUser = std::nullopt;
 
 /// MARK: - Private Methods
 /// Get the username from the user and store into _username
@@ -47,6 +50,17 @@ string LoginController::hashPassword(const string& plainText, const string& salt
     }
     
     return string(result);
+}
+
+void LoginController::setUser(const QueryResultVector& result) {
+    optional<string> countriesRes;
+    
+    setFieldFromQueryResult(countriesRes, "country", result);
+    
+    if (countriesRes.has_value()) {
+        LoginController::_currentUser.value() = User(username(), countriesRes.value());
+    }
+    
 }
 
 /// MARK: - Public Methods
@@ -94,7 +108,7 @@ bool LoginController::attemptLogin() {
     optional<string> salt;
     
     setFieldFromQueryResult(password, "password", result);
-    setFieldFromQueryResult(password, "salt", result);
+    setFieldFromQueryResult(salt, "salt", result);
     
     if (!password.has_value() || !salt.has_value()) {
         success = false;
@@ -102,7 +116,13 @@ bool LoginController::attemptLogin() {
     
     hashedPassword = this->hashPassword(password.value(), salt.value());
     
-    return hashedPassword == password;
+    success = hashedPassword == password;
+    
+    if (success) {
+        setUser(result);
+    }
+    
+    return success;
 }
 
 /// Get the username
@@ -115,4 +135,9 @@ string LoginController::username() {
 /// @Returns Get the country or countries the user wants
 vector<Country> LoginController::countries() {
     return this->_countries;
+}
+
+/// Get the current user
+optional<User> LoginController::getActiveUser() {
+    return _currentUser;
 }

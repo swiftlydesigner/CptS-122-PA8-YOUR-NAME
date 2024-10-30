@@ -40,6 +40,8 @@ class LoginController final {
     
     string hashPassword(const string& plainText, const string& salt);
     
+    void setUser(const QueryResultVector& result);
+    
 public:
     LoginController();
     
@@ -61,6 +63,9 @@ public:
     /// Get the countries
     /// @Returns Get the country or countries the user wants
     vector<Country> countries();
+    
+    /// Get the current User
+    static optional<User> getActiveUser();
 };
 
 #endif /* LoginController_hpp */
