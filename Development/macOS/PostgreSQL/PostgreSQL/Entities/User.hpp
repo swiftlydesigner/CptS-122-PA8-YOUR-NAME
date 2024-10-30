@@ -9,12 +9,15 @@
 #define User_hpp
 
 #include <string>
+#include <vector>
 
 #include "../Types/EnumDecoder.hpp"
 
 class User final {
     const std::string _username;
-    const Country _country;
+    const std::vector<Country> _countries;
+    
+    std::vector<Country> _stringToCountries(const std::string& countries);
     
 public:
     /// Initalize the user with a username and country
@@ -27,7 +30,7 @@ public:
     const std::string& username();
     
     /// Get the country of the current user
-    const Country country();
+    const std::vector<Country>& countries();
 };
 
 #endif /* User_hpp */
