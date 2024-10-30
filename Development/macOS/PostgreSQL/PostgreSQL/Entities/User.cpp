@@ -9,7 +9,7 @@
 
 #include "User.hpp"
 
-std::vector<Country> _stringToCountries(const std::string& countries) {
+std::vector<Country> User::_stringToCountries(const std::string& countries) {
     std::vector<Country> countryList;
     std::stringstream stream(countries);
     std::string ele;
