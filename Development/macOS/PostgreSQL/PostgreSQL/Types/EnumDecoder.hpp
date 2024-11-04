@@ -35,4 +35,17 @@ inline Country stringToCountry(const std::string& countryStr) {
     }
 }
 
+inline std::vector<Country> rawStringToCountries(const std::string& countriesStr) {
+    std::vector<Country> countries;
+    
+    std::stringstream ss(countriesStr);
+    std::string country;
+    
+    while (std::getline(ss, country, ',')) {
+        countries.push_back(stringToCountry(country));
+    }
+    
+    return countries;
+}
+
 #endif /* EnumDecoder_h */
