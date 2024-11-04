@@ -12,8 +12,64 @@
 /// GoogleReviewEntity constructor based on a db query result.
 /// @Param row A single row from a db query
 GoogleReviewEntity::GoogleReviewEntity(const pqxx::row& row) {
+    this->_reviewId = row["review_id"].as<string>();
     
-}
+    this->_url = row["url"].as<string>();
+    
+    this->_placeId = row["place_id"].as<string>();
+    
+    this->_country = stringToCountry(row["country"].as<string>());
+    
+    this->_address = row["address"].as<string>();
+    
+    this->_reviewerName = row["reviewer_name"].as<string>();
+    
+    this->_reviewsByReviewer = row["reviews_by_reviewer"].as<int>();
+    
+    this->_photosByReviewer = row["photos_by_reviewer"].as<string>();
+    
+    this->_reviewerUrl = row["reviewer_url"].as<string>();
+    
+    this->_localGuide = row["local_guide"].as<bool>();
+    
+    this->_reviewRating = row["review_rating"].as<int>();
+    
+    if (row["review"].is_null()) {
+        this->_review = std::nullopt;
+    } else {
+        this->_review = row["review"].as<string>();
+    }
+    
+    
+    this->_reviewDate = row["review_date"].as<string>();
+    
+    try {
+        this->_numberOfLikes = std::stoi(row["number_of_likes"].as<string>());
+    } catch (std::invalid_argument ignore) {
+        this->_numberOfLikes = 0;
+    }
+    
+    
+    if (row["response_of_owner"].is_null()) {
+        this->_responseOfOwner = std::nullopt;
+    } else {
+        this->_responseOfOwner = row["response_of_owner"].as<string>();
+    }
+    
+    if (row["response_date"].is_null()) {
+        this->_responseDate = std::nullopt;
+    } else {
+        this->_responseDate = row["response_date"].as<string>();
+    }
+    
+    if (row["photos"].is_null()) {
+        this->_photos = std::nullopt;
+    } else {
+        this->_photos = row["photos"].as<string>();
+    }
+    
+    this->_businessName = row["place_name"].as<string>();
+ }
 
 /// Get the reviewId
 string GoogleReviewEntity::reviewId() const {
