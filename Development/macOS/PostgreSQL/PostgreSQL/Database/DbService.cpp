@@ -31,7 +31,15 @@ vector<GoogleReviewEntity> DbService::getAllReviews() {
 /// Get reviews in the database with the constraints
 /// @Param country The country to filter by
 vector<GoogleReviewEntity> DbService::getReviewsWithCountry(Country country) {
-    return vector<GoogleReviewEntity>();
+    vector<GoogleReviewEntity> entities = vector<GoogleReviewEntity>();
+    
+    pqxx::result res = _repo.selectWhere("*", "google_reviews", "country = '" + countryToString(country) + "'");
+    
+    for (pqxx::row row : res) {
+        entities.push_back(GoogleReviewEntity(row));
+    }
+    
+    return entities;
 }
 
 /// Get the login info for the specified username.
