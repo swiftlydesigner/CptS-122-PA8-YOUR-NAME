@@ -35,6 +35,26 @@ inline Country stringToCountry(const std::string& countryStr) {
     }
 }
 
+inline std::string countryToString(const Country& country) {
+    static const std::map<Country, std::string> countryMap = {
+        {kUS, "US"},
+        {kGB, "GB"},
+        {kIE, "IE"},
+        {kDE, "DE"},
+        {kCA, "CA"},
+        {kBR, "BR"},
+        {kFR, "FR"},
+        {kAU, "AU"}
+    };
+    
+    auto it = countryMap.find(country);
+    if (it != countryMap.end()) {
+        return it->second;
+    } else {
+        return ""; // Return kUNSPECIFIED for unrecognized strings
+    }
+}
+
 inline std::vector<Country> rawStringToCountries(const std::string& countriesStr) {
     std::vector<Country> countries;
     
