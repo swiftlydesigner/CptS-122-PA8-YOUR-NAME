@@ -42,8 +42,8 @@ class GoogleReviewEntity final {
     
 public:
     /// GoogleReviewEntity constructor based on a db query result.
-    /// @Param results The results from a prior db query
-    GoogleReviewEntity(const pqxx::result& results);
+    /// @Param row A single row from a db query
+    GoogleReviewEntity(const pqxx::row& row);
     
     /// Get the reviewId
     string reviewId() const;
