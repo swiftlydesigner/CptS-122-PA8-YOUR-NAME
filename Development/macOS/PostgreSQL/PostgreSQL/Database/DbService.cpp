@@ -17,7 +17,15 @@ DbService::DbService(const string& serverAddress) : _repo(serverAddress) {
 
 /// Get all reviews in the database
 vector<GoogleReviewEntity> DbService::getAllReviews() {
-    return vector<GoogleReviewEntity>();
+    vector<GoogleReviewEntity> entities = vector<GoogleReviewEntity>();
+    
+    pqxx::result res = _repo.selectAllFrom("google_reviews");
+    
+    for (pqxx::row row : res) {
+        entities.push_back(GoogleReviewEntity(row));
+    }
+    
+    return entities;
 }
 
 /// Get reviews in the database with the constraints
