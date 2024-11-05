@@ -25,6 +25,9 @@ void ReviewApp::runApplication() {
     int selection = 0;
     bool shouldRun = true;
     
+    /// Attempt login while there is failure
+    while (!login());
+    
     while (shouldRun) {
         showMenuOptions();
         selection = getMenuOption();
