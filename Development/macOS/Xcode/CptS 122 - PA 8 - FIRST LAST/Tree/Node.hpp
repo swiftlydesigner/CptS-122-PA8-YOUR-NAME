@@ -1,5 +1,5 @@
 //
-//  TreeNode.hpp
+//  Node.hpp
 //  PostgreSQL
 //
 //  Created by Kyle Parker on 10/18/24.

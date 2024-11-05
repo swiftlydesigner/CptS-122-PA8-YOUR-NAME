@@ -10,7 +10,7 @@
 #ifndef TreeBase_hpp
 #define TreeBase_hpp
 
-#include "TreeNode.hpp"
+#include "Node.hpp"
 
 class TreeBase {
 protected:
