@@ -31,10 +31,10 @@ public:
     User operator=(const User& rhs);
     
     /// Get the username of the current user
-    const std::string& username();
+    const std::string username();
     
     /// Get the country of the current user
-    const std::vector<Country>& countries();
+    const std::vector<Country> countries();
 };
 
 #endif /* User_hpp */

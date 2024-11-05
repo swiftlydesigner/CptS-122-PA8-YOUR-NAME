@@ -39,10 +39,10 @@ User User::operator=(const User& rhs) {
     return User(rhs);
 }
 
-const std::string& User::username() {
+const std::string User::username() {
     return _username;
 }
 
-const std::vector<Country>& User::countries() {
+const std::vector<Country> User::countries() {
     return _countries;
 }
