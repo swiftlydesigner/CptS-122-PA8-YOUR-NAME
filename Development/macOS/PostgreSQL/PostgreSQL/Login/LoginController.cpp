@@ -65,6 +65,7 @@ void LoginController::gatherLoginCreds() {
     } else if (loginAttempts >= 3) {
         /// Session is locked. User must close the app.
         cout << "Session locked. Please close the app and try again later." << endl;
+        exit(28002);
     }
     
     cout << "username % ";
