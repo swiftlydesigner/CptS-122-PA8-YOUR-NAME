@@ -73,7 +73,7 @@ int ReviewApp::getMenuOption() const {
     
     do {
         if (!valid) {
-            cout << "Invlaid selection: Input must be an integer and within the range 1 - " << (this->_options.size() - 1) << "!" << endl;
+            cout << "Invlaid selection: Input must be an integer and within the range 1 - " << (this->_options.size()) << "!" << endl;
         }
         
         cout << "Selection % ";
@@ -85,8 +85,8 @@ int ReviewApp::getMenuOption() const {
             valid = false;
         }
         
-        /// Ensure the option is between 1 and size-1, inclusive.
-        valid = option > 0 && option < this->_options.size();
+        /// Ensure the option is between 1 and size, inclusive.
+        valid = option > 0 && option <= this->_options.size();
     } while (!valid);
     
     return option - 1;
