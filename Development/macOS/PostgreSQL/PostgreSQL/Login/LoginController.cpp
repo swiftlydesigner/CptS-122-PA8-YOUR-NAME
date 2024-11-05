@@ -39,7 +39,7 @@ void LoginController::setUser(const QueryResultVector& result) {
     setFieldFromQueryResult(countriesRes, "country", result);
     
     if (countriesRes.has_value()) {
-        LoginController::_currentUser.value() = User(username(), countriesRes.value());
+        LoginController::_currentUser = User(username(), countriesRes.value());
     }
     
 }
