@@ -53,7 +53,7 @@ LoginController::LoginController() : _service("postgresql://introuser.soppzqrbch
 void LoginController::gatherLoginCreds() {
     clearScreen();
     cout << "Welcome! Please enter your username and password." << endl;
-    cout << "Notice: When you type your password, it will be hidden." << endl;
+    cout << "Notice: When you type your password, it will be hidden on some systems." << endl;
     
     /// Check if a warning message should be allowed
     if (loginAttempts > 0 && loginAttempts < 3) {
@@ -74,6 +74,7 @@ void LoginController::gatherLoginCreds() {
     cout << "password % ";
     getPasswordFromUser();
     showInput();
+    cout << "Authenticating user `" + username() + "`..." << endl;
     
     ++loginAttempts;
 }
