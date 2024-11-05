@@ -28,7 +28,7 @@ void ReviewApp::runApplication() {
     while (shouldRun) {
         showMenuOptions();
         selection = getMenuOption();
-        handleMenuOption(selection);
+        shouldRun = handleMenuOption(selection);
     }
 }
 
@@ -93,7 +93,8 @@ int ReviewApp::getMenuOption() const {
 }
 
 /// TODO: Implment this
-void ReviewApp::handleMenuOption(const int selection) const {
+bool ReviewApp::handleMenuOption(const int selection) const {
+    bool shouldRun = true;
     /// TODO: Put your application logic here!
     ///
     /// **Important Note:** You should call helper functions for each option.
@@ -107,4 +108,6 @@ void ReviewApp::handleMenuOption(const int selection) const {
     /// Note: If you need the string to describe the action, do
     /// so by accessing this->_options.at(selection).
     /// Note: selection is already the index, do not adjust it!
+    
+    return shouldRun;
 }

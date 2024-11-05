@@ -60,7 +60,7 @@ class ReviewApp final {
     
     /// MARK: - Begin adding functions here
     
-    void handleMenuOption(const int selection) const;
+    bool handleMenuOption(const int selection) const;
     
 public:
     /// MARK: - Do not edit the functions below
