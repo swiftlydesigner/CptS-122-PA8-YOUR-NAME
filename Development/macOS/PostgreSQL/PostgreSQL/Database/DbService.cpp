@@ -47,14 +47,13 @@ vector<GoogleReviewEntity> DbService::getReviewsWithCountry(Country country) {
 QueryResultVector DbService::getLoginDataForUser(const std::string& username) {
     QueryResultVector data = {};
     
-    pqxx::result result = this->_repo.selectWhere("password, salt, countries", "google_login", "username = '" + username + "'");
+    pqxx::result result = this->_repo.selectWhere("password, countries", "google_login", "username = '" + username + "'");
     
     const pqxx::row& row = result.front();
     
-    data.push_back(make_pair("pw", row["password"].as< optional<string> >()));
-    data.push_back(make_pair("country", row["counties"].as< optional<string> >()));
+    data.push_back(make_pair("password", row["password"].as< optional<string> >()));
+    data.push_back(make_pair("country", row["countries"].as< optional<string> >()));
     data.push_back(make_pair("usr", username));
-    data.push_back(make_pair("salt", row["salt"].as< optional<string> >()));
     
     return data;
 }

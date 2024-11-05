@@ -33,25 +33,6 @@ void LoginController::setFieldFromQueryResult(optional<string>& dest,
     }
 }
 
-string LoginController::hashPassword(const string& plainText, const string& salt) {
-    const char * key = std::getenv("SECURE_KEY");
-    char plain[512];
-    char saltStr[512];
-    
-    strncpy(plain, plainText.c_str(), 512);
-    strncpy(saltStr, salt.c_str(), 512);
-    
-    const size_t resultSize = strlen(key);
-    
-    char result[resultSize];
-    
-    for (int i = 0; i < resultSize; ++i) {
-        result[i] = key[i] ^ (plainText[i] ^ saltStr[i]);
-    }
-    
-    return string(result);
-}
-
 void LoginController::setUser(const QueryResultVector& result) {
     optional<string> countriesRes;
     
@@ -103,20 +84,15 @@ bool LoginController::attemptLogin() {
     
     QueryResultVector result = this->_service.getLoginDataForUser(username());
     
-    string hashedPassword;
     optional<string> password;
-    optional<string> salt;
     
     setFieldFromQueryResult(password, "password", result);
-    setFieldFromQueryResult(salt, "salt", result);
     
-    if (!password.has_value() || !salt.has_value()) {
+    if (password.has_value()) {
+        success = this->_password == password;
+    } else {
         success = false;
     }
-    
-    hashedPassword = this->hashPassword(password.value(), salt.value());
-    
-    success = hashedPassword == password;
     
     if (success) {
         setUser(result);

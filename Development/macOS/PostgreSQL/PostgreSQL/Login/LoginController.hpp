@@ -38,8 +38,6 @@ class LoginController final {
                                  const string& field,
                                  const QueryResultVector& results) const;
     
-    string hashPassword(const string& plainText, const string& salt);
-    
     void setUser(const QueryResultVector& result);
     
 public:
