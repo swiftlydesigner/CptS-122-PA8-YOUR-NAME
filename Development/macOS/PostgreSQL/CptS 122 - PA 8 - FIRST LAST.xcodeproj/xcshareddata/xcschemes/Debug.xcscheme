@@ -16,9 +16,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "AA4396D82CAFB631006B8CD3"
-               BuildableName = "PostgreSQL"
-               BlueprintName = "PostgreSQL"
-               ReferencedContainer = "container:PostgreSQL.xcodeproj">
+               BuildableName = "CptS 122 - PA 8 - FIRST LAST"
+               BlueprintName = "CptS 122 - PA 8 - FIRST LAST"
+               ReferencedContainer = "container:CptS 122 - PA 8 - FIRST LAST.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -51,9 +51,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AA4396D82CAFB631006B8CD3"
-            BuildableName = "PostgreSQL"
-            BlueprintName = "PostgreSQL"
-            ReferencedContainer = "container:PostgreSQL.xcodeproj">
+            BuildableName = "CptS 122 - PA 8 - FIRST LAST"
+            BlueprintName = "CptS 122 - PA 8 - FIRST LAST"
+            ReferencedContainer = "container:CptS 122 - PA 8 - FIRST LAST.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <EnvironmentVariables>
@@ -92,9 +92,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AA4396D82CAFB631006B8CD3"
-            BuildableName = "PostgreSQL"
-            BlueprintName = "PostgreSQL"
-            ReferencedContainer = "container:PostgreSQL.xcodeproj">
+            BuildableName = "CptS 122 - PA 8 - FIRST LAST"
+            BlueprintName = "CptS 122 - PA 8 - FIRST LAST"
+            ReferencedContainer = "container:CptS 122 - PA 8 - FIRST LAST.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

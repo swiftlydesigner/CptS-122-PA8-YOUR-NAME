@@ -40,13 +40,13 @@
 /* Begin PBXFileReference section */
 		AA26C11D2CC0C952008E8E7A /* libpqxx-7.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libpqxx-7.9.dylib"; path = "../../../../../../../../../../../../../../opt/homebrew/Cellar/libpqxx/7.9.2/lib/libpqxx-7.9.dylib"; sourceTree = "<group>"; };
 		AA26C1212CC0C998008E8E7A /* libpq.5.14.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libpq.5.14.dylib; path = "../../../../../../../../../../../../../../opt/homebrew/Cellar/postgresql@14/14.13_1/lib/postgresql@14/libpq.5.14.dylib"; sourceTree = "<group>"; };
-		AA4396D92CAFB631006B8CD3 /* PostgreSQL */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PostgreSQL; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA4396D92CAFB631006B8CD3 /* CptS 122 - PA 8 - FIRST LAST */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "CptS 122 - PA 8 - FIRST LAST"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		AA4396DB2CAFB631006B8CD3 /* PostgreSQL */ = {
+		AA4396DB2CAFB631006B8CD3 /* CptS 122 - PA 8 - FIRST LAST */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = PostgreSQL;
+			path = "CptS 122 - PA 8 - FIRST LAST";
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -76,7 +76,7 @@
 		AA4396D02CAFB631006B8CD3 = {
 			isa = PBXGroup;
 			children = (
-				AA4396DB2CAFB631006B8CD3 /* PostgreSQL */,
+				AA4396DB2CAFB631006B8CD3 /* CptS 122 - PA 8 - FIRST LAST */,
 				AA26C11C2CC0C951008E8E7A /* Frameworks */,
 				AA4396DA2CAFB631006B8CD3 /* Products */,
 			);
@@ -85,7 +85,7 @@
 		AA4396DA2CAFB631006B8CD3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AA4396D92CAFB631006B8CD3 /* PostgreSQL */,
+				AA4396D92CAFB631006B8CD3 /* CptS 122 - PA 8 - FIRST LAST */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -93,9 +93,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		AA4396D82CAFB631006B8CD3 /* PostgreSQL */ = {
+		AA4396D82CAFB631006B8CD3 /* CptS 122 - PA 8 - FIRST LAST */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AA4396E02CAFB631006B8CD3 /* Build configuration list for PBXNativeTarget "PostgreSQL" */;
+			buildConfigurationList = AA4396E02CAFB631006B8CD3 /* Build configuration list for PBXNativeTarget "CptS 122 - PA 8 - FIRST LAST" */;
 			buildPhases = (
 				AA4396D52CAFB631006B8CD3 /* Sources */,
 				AA4396D62CAFB631006B8CD3 /* Frameworks */,
@@ -107,13 +107,13 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				AA4396DB2CAFB631006B8CD3 /* PostgreSQL */,
+				AA4396DB2CAFB631006B8CD3 /* CptS 122 - PA 8 - FIRST LAST */,
 			);
-			name = PostgreSQL;
+			name = "CptS 122 - PA 8 - FIRST LAST";
 			packageProductDependencies = (
 			);
 			productName = PostgreSQL;
-			productReference = AA4396D92CAFB631006B8CD3 /* PostgreSQL */;
+			productReference = AA4396D92CAFB631006B8CD3 /* CptS 122 - PA 8 - FIRST LAST */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -130,7 +130,7 @@
 					};
 				};
 			};
-			buildConfigurationList = AA4396D42CAFB631006B8CD3 /* Build configuration list for PBXProject "PostgreSQL" */;
+			buildConfigurationList = AA4396D42CAFB631006B8CD3 /* Build configuration list for PBXProject "CptS 122 - PA 8 - FIRST LAST" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -144,7 +144,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				AA4396D82CAFB631006B8CD3 /* PostgreSQL */,
+				AA4396D82CAFB631006B8CD3 /* CptS 122 - PA 8 - FIRST LAST */,
 			);
 		};
 /* End PBXProject section */
@@ -332,7 +332,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		AA4396D42CAFB631006B8CD3 /* Build configuration list for PBXProject "PostgreSQL" */ = {
+		AA4396D42CAFB631006B8CD3 /* Build configuration list for PBXProject "CptS 122 - PA 8 - FIRST LAST" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AA4396DE2CAFB631006B8CD3 /* Debug */,
@@ -341,7 +341,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AA4396E02CAFB631006B8CD3 /* Build configuration list for PBXNativeTarget "PostgreSQL" */ = {
+		AA4396E02CAFB631006B8CD3 /* Build configuration list for PBXNativeTarget "CptS 122 - PA 8 - FIRST LAST" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AA4396E12CAFB631006B8CD3 /* Debug */,
