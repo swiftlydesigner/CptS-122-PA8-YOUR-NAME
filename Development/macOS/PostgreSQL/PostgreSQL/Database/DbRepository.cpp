@@ -25,6 +25,8 @@ DbRepository::~DbRepository() {
 /// Select all rows from a given table
 /// @Param table The table to read everything from
 pqxx::result DbRepository::selectAllFrom(const string& table) const {
+    pqxx::result results = pqxx::result();
+    
     try {
         // Connect to the database
         pqxx::connection conn(url);
@@ -35,27 +37,30 @@ pqxx::result DbRepository::selectAllFrom(const string& table) const {
             std::cout << "Opened database successfully: " << conn.dbname() << std::endl;
         } else {
             std::cout << "Can't open database" << std::endl;
-            return pqxx::result();
+            return results;
         }
 #else
         if (!conn.is_open()) {
-            return pqxx::result();
+            return results;
         }
 #endif
         
         // Create a non-transactional object
-        pqxx::nontransaction nonTrans(conn);
+        pqxx::work trans(conn);
         
         // Execute a SQL query
-        pqxx::result results(nonTrans.exec("SELECT * FROM " + table + ";"));
+        results = trans.exec("SELECT * FROM " + table + ";");
         
         // Print the result
         return results;
         
+    } catch (const pqxx::sql_error &e) {
+        std::cerr << "SQL error: " << e.what() << std::endl;
+        std::cerr << "Query: " << e.query() << std::endl;
     } catch (const std::exception &e) {
         std::cerr << e.what() << std::endl;
     }
-    return pqxx::result();
+    return results;
 }
 
 /// Select all fields from a given table
@@ -63,7 +68,10 @@ pqxx::result DbRepository::selectAllFrom(const string& table) const {
 /// @Param table The table to read from
 /// @Param where Conditionals
 pqxx::result DbRepository::selectWhere(const string& fields, const string& table, const string& where) const {
+    pqxx::result results;
+
     try {
+        
         // Connect to the database
         pqxx::connection conn(url);
         
@@ -73,25 +81,25 @@ pqxx::result DbRepository::selectWhere(const string& fields, const string& table
             std::cout << "Opened database successfully: " << conn.dbname() << std::endl;
         } else {
             std::cout << "Can't open database" << std::endl;
-            return pqxx::result();
+            return results;
         }
 #else
         if (!conn.is_open()) {
-            return pqxx::result();
+            return results;
         }
 #endif
         
-        // Create a non-transactional object
-        pqxx::nontransaction nonTrans(conn);
+        // Create a transactional object
+        pqxx::work trans(conn);
         
         // Execute a SQL query
-        pqxx::result results(nonTrans.exec("SELECT (" + fields + ") FROM " + table + " WHERE (" + where + ");"));
+        results = trans.exec("SELECT " + fields + " FROM " + table + " WHERE " + where + ";");
         
-        // Print the result
-        return results;
-        
+    } catch (const pqxx::sql_error &e) {
+        std::cerr << "SQL error: " << e.what() << std::endl;
+        std::cerr << "Query: " << e.query() << std::endl;
     } catch (const std::exception &e) {
-        std::cerr << e.what() << std::endl;
+        std::cerr << "Exception: " << e.what() << std::endl;
     }
-    return pqxx::result();
+    return results;
 }
