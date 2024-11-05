@@ -28,10 +28,14 @@ public:
     NodeData(const string& businessName, const GoogleReviewEntity& entity);
     
     /// Get the businessName of the node
-    const string& businessName();
+    const string& businessName() const noexcept;
     
     /// Get all entities
-    const vector<GoogleReviewEntity>& getAllEntities();
+    const vector<GoogleReviewEntity>& getAllEntities() const noexcept;
+    
+    void addEntity(const GoogleReviewEntity& entity);
+    
+    void removeEntity(const size_t& index);
 };
 
 #endif /* NodeData_hpp */

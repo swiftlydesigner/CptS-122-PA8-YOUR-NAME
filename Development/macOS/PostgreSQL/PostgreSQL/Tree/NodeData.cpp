@@ -19,11 +19,19 @@ NodeData::NodeData(const string& businessName, const GoogleReviewEntity& entity)
 }
 
 /// Get the businessName of the node
-const string& NodeData::businessName() {
+const string& NodeData::businessName() const noexcept {
     return this->_businessName;
 }
 
 /// Get all entities
-const vector<GoogleReviewEntity>& NodeData::getAllEntities() {
+const vector<GoogleReviewEntity>& NodeData::getAllEntities() const noexcept {
     return this->_entities;
+}
+
+void NodeData::addEntity(const GoogleReviewEntity& entity) {
+    this->_entities.push_back(entity);
+}
+
+void NodeData::removeEntity(const size_t& index) {
+    this->_entities.erase(this->_entities.begin() + index);
 }
