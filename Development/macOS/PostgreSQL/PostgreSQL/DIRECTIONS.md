@@ -25,5 +25,18 @@ Be sure to look at the files below:
 # Instructions
 See Canvas for PA instructions, requirements, and grading rubric.
 
+# Users
+## Single Country (Country code is the login)
+1. username = US, password = US
+2. username = GB, password = GB
+3. username = DE, password = DE
+4. username = CA, password = CA
+5. username = BR, password = BR
+6. username = FR, password = FR
+7. username = AU, password = AU
+
+## Multi Country
+1. username = user, password = password
+
 # Install
 See README.md.
