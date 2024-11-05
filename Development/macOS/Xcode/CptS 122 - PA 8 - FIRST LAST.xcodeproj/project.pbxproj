@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		AA26C11E2CC0C952008E8E7A /* libpqxx-7.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AA26C11D2CC0C952008E8E7A /* libpqxx-7.9.dylib */; };
 		AA26C11F2CC0C952008E8E7A /* libpqxx-7.9.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = AA26C11D2CC0C952008E8E7A /* libpqxx-7.9.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		AA26C1222CC0C998008E8E7A /* libpq.5.14.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AA26C1212CC0C998008E8E7A /* libpq.5.14.dylib */; };
-		AA26C1232CC0C998008E8E7A /* libpq.5.14.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = AA26C1212CC0C998008E8E7A /* libpq.5.14.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		AA3C61BF2CD9D71800F7ED59 /* libpq.5.15.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AA3C61BE2CD9D71800F7ED59 /* libpq.5.15.dylib */; };
+		AA3C61C02CD9D71800F7ED59 /* libpq.5.15.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = AA3C61BE2CD9D71800F7ED59 /* libpq.5.15.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -20,8 +20,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				AA26C1232CC0C998008E8E7A /* libpq.5.14.dylib in Embed Libraries */,
 				AA26C11F2CC0C952008E8E7A /* libpqxx-7.9.dylib in Embed Libraries */,
+				AA3C61C02CD9D71800F7ED59 /* libpq.5.15.dylib in Embed Libraries */,
 			);
 			name = "Embed Libraries";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -40,6 +40,7 @@
 /* Begin PBXFileReference section */
 		AA26C11D2CC0C952008E8E7A /* libpqxx-7.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libpqxx-7.9.dylib"; path = "../../../../../../../../../../../../../../opt/homebrew/Cellar/libpqxx/7.9.2/lib/libpqxx-7.9.dylib"; sourceTree = "<group>"; };
 		AA26C1212CC0C998008E8E7A /* libpq.5.14.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libpq.5.14.dylib; path = "../../../../../../../../../../../../../../opt/homebrew/Cellar/postgresql@14/14.13_1/lib/postgresql@14/libpq.5.14.dylib"; sourceTree = "<group>"; };
+		AA3C61BE2CD9D71800F7ED59 /* libpq.5.15.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libpq.5.15.dylib; path = "../../../../../../../../../../../../../../opt/homebrew/Cellar/postgresql@15/15.8_1/lib/libpq.5.15.dylib"; sourceTree = "<group>"; };
 		AA4396D92CAFB631006B8CD3 /* CptS 122 - PA 8 - FIRST LAST */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "CptS 122 - PA 8 - FIRST LAST"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -56,8 +57,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA26C1222CC0C998008E8E7A /* libpq.5.14.dylib in Frameworks */,
 				AA26C11E2CC0C952008E8E7A /* libpqxx-7.9.dylib in Frameworks */,
+				AA3C61BF2CD9D71800F7ED59 /* libpq.5.15.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +68,7 @@
 		AA26C11C2CC0C951008E8E7A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AA3C61BE2CD9D71800F7ED59 /* libpq.5.15.dylib */,
 				AA26C1212CC0C998008E8E7A /* libpq.5.14.dylib */,
 				AA26C11D2CC0C952008E8E7A /* libpqxx-7.9.dylib */,
 			);
@@ -292,6 +294,7 @@
 					"$(PROJECT_DIR)/PostgreSQL/objc",
 					/opt/homebrew/Cellar/libpqxx/7.9.2/lib,
 					"/opt/homebrew/Cellar/postgresql@14/14.13_1/lib/postgresql@14",
+					"/opt/homebrew/Cellar/postgresql@15/15.8_1/lib",
 				);
 				OTHER_LDFLAGS = (
 					"-lpqxx",
@@ -319,6 +322,7 @@
 					"$(PROJECT_DIR)/PostgreSQL/objc",
 					/opt/homebrew/Cellar/libpqxx/7.9.2/lib,
 					"/opt/homebrew/Cellar/postgresql@14/14.13_1/lib/postgresql@14",
+					"/opt/homebrew/Cellar/postgresql@15/15.8_1/lib",
 				);
 				OTHER_LDFLAGS = (
 					"-lpqxx",
