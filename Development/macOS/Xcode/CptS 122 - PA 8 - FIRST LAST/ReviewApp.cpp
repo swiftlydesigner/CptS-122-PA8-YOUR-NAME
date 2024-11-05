@@ -26,7 +26,9 @@ void ReviewApp::runApplication() {
     bool shouldRun = true;
     
     /// Attempt login while there is failure
-    while (!login());
+    while (!login()) {}
+    
+    clearScreen();
     
     while (shouldRun) {
         showMenuOptions();
