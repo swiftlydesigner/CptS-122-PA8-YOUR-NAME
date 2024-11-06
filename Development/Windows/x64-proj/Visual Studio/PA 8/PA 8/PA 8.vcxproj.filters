@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Analysis">
+      <UniqueIdentifier>{21f35126-53f5-4be8-84e0-011b59c951b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Database">
+      <UniqueIdentifier>{db531c06-7e9c-4ed2-996c-8dc5f8716dd8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Entities">
+      <UniqueIdentifier>{19d906ff-04d1-4566-a0dc-5662c469a773}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Login">
+      <UniqueIdentifier>{4a09745b-4021-4b68-a9bf-425884d3740b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tree">
+      <UniqueIdentifier>{e5441d69-5712-41f3-a1bd-39e164788669}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Types">
+      <UniqueIdentifier>{4ee6d096-428e-4bd8-a256-8d72863e491e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Analysis\BusinessReviewAnalyzer.cpp">
+      <Filter>Analysis</Filter>
+    </ClCompile>
+    <ClCompile Include="Database\DbRepository.cpp">
+      <Filter>Database</Filter>
+    </ClCompile>
+    <ClCompile Include="Database\DbService.cpp">
+      <Filter>Database</Filter>
+    </ClCompile>
+    <ClCompile Include="Entities\GoogleReviewEntity.cpp">
+      <Filter>Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="Entities\User.cpp">
+      <Filter>Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="Login\LoginController.cpp">
+      <Filter>Login</Filter>
+    </ClCompile>
+    <ClCompile Include="Tree\NodeData.cpp">
+      <Filter>Tree</Filter>
+    </ClCompile>
+    <ClCompile Include="Tree\Tree.cpp">
+      <Filter>Tree</Filter>
+    </ClCompile>
+    <ClCompile Include="Tree\TreeNode.cpp">
+      <Filter>Tree</Filter>
+    </ClCompile>
+    <ClCompile Include="Types\Common.cpp">
+      <Filter>Types</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="ReviewApp.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Analysis\BusinessReviewAnalyzer.hpp">
+      <Filter>Analysis</Filter>
+    </ClInclude>
+    <ClInclude Include="Analysis\Reviewer.hpp">
+      <Filter>Analysis</Filter>
+    </ClInclude>
+    <ClInclude Include="Database\DbRepository.hpp">
+      <Filter>Database</Filter>
+    </ClInclude>
+    <ClInclude Include="Database\DbService.hpp">
+      <Filter>Database</Filter>
+    </ClInclude>
+    <ClInclude Include="Entities\GoogleReviewEntity.hpp">
+      <Filter>Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="Entities\User.hpp">
+      <Filter>Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="Login\LoginController.hpp">
+      <Filter>Login</Filter>
+    </ClInclude>
+    <ClInclude Include="Tree\NodeData.hpp">
+      <Filter>Tree</Filter>
+    </ClInclude>
+    <ClInclude Include="Tree\Tree.hpp">
+      <Filter>Tree</Filter>
+    </ClInclude>
+    <ClInclude Include="Tree\TreeBase.hpp">
+      <Filter>Tree</Filter>
+    </ClInclude>
+    <ClInclude Include="Tree\TreeNode.hpp">
+      <Filter>Tree</Filter>
+    </ClInclude>
+    <ClInclude Include="Types\Common.hpp">
+      <Filter>Types</Filter>
+    </ClInclude>
+    <ClInclude Include="Types\EnumDecoder.hpp">
+      <Filter>Types</Filter>
+    </ClInclude>
+    <ClInclude Include="Types\Enums.hpp">
+      <Filter>Types</Filter>
+    </ClInclude>
+    <ClInclude Include="ReviewApp.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DIRECTIONS.md" />
+  </ItemGroup>
+</Project>
