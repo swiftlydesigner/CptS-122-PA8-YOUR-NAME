@@ -12,15 +12,6 @@ function Echo-Message {
 Echo-Message "WARNING: You are installing software at your own risk. Please ensure you have Visual Studio or a similar development environment installed."
 
 Echo-Message "INFO: You will be installing choco [pkg manager], PostgreSQL [library], vcpkg [pkg manager], git [CLI tool], libpqxx [library]. If you wish to not install the pkg managers and git, PRESS CTRL-C NOW. Then, manually install PostgreSQL and libpqxx."
-# Check if Visual Studio is installed
-# $vsInstalled = Get-Command "devenv.exe" -ErrorAction SilentlyContinue
-
-# if (-not $vsInstalled) {
-#     Echo-Message "Visual Studio is not installed. Please install Visual Studio before running this script."
-#     exit 1
-# }
-
-# Echo-Message "Visual Studio is installed. Proceeding with the script..."
 
 # Check if Chocolatey is installed
 if (-not (Get-Command "choco" -ErrorAction SilentlyContinue)) {

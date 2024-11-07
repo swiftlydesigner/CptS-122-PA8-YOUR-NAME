@@ -74,8 +74,8 @@ if ($LASTEXITCODE -ne 0) {
 Echo-Message "libpqxx installed successfully."
 
 # Optional: Set up environment variables (if needed)
-$env:VCPKG_ROOT = $vcpkgDir
-[System.Environment]::SetEnvironmentVariable("VCPKG_ROOT", $vcpkgDir, [System.EnvironmentVariableTarget]::User)
+$env:VCPKG_ROOT = $installDir
+[System.Environment]::SetEnvironmentVariable("VCPKG_ROOT", $installDir, [System.EnvironmentVariableTarget]::User)
 
 # Final message
 Echo-Message "All installations completed successfully. You can now use vcpkg and libpqxx."
